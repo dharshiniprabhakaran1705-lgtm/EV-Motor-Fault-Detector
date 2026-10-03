@@ -2,9 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Hello from Jenkins CI Pipeline!'
+                echo 'Checking out EV Motor Fault Detector...'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building EV Motor Fault Detector web application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing EV Motor Fault Detector...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying EV Motor Fault Detector...'
             }
         }
     }

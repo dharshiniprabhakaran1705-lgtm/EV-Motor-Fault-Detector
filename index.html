@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EV Motor Fault Detector</title>
+</head>
+<body>
+
+    <h1>EV Motor Fault Detector</h1>
+
+    <label>Motor Vibration:</label>
+    <input type="number" id="vibration">
+
+    <br><br>
+
+    <label>Motor Temperature (°C):</label>
+    <input type="number" id="temperature">
+
+    <br><br>
+
+    <button onclick="detectFault()">Check Motor</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function detectFault() {
+
+            let vibration = document.getElementById("vibration").value;
+            let temperature = document.getElementById("temperature").value;
+
+            if (vibration > 70 || temperature > 80) {
+                document.getElementById("result").innerHTML =
+                    "⚠️ Motor Fault Detected";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "✅ Motor Normal";
+            }
+        }
+    </script>
+
+</body>
+</html>
